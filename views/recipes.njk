@@ -2,58 +2,74 @@
 
 {% block content %}
     <main>
-            <div class="row box-image-area">
-                
-                {% for recipe in data %}   
-            
-                <div class="col-4 card" id="{{ recipe.image }}">
-                    <img src="{{ recipe.image }}" class="card-img-top" alt="">
-                    <div class="card-body">
-                        <p class="text h6">{{ recipe.title }}</p>
-                        <p class="text small">por {{ recipe.author }}</p>
+        <div class="image-area">
+            <div class="layout-img">
+                <img src="{{data[index].image}}" alt=""/>
+            </div>
+
+                <div class="card-body">
+                    <p class="top-title h5">
+                        {{ data[index].title }}
+                    </p>
+                    <p class="top-author small">
+                        por {{ data[index].author }}
+                    </p>
+
+                    <div class="details">
+                        <div class="hideShow">
+                            <p class="h6 bold">ingredientes</p>
+                            <a class="toggle">Esconder</a>
+                        </div>
+                        
+                        <div class="ingredients-list content">
+                            <ul>
+
+                                {% for ingredient in data[index].ingredients %}
+
+                                    <li>{{ ingredient }}</li>
+
+                                {% endfor %}
+                            
+                            </ul>
+
+                    </div>
+
+                    <div class="details">
+                        <div class="hideShow">
+                            <p class="h6 bold">Modo de preparo</p>
+                            <a class="toggle">Esconder</a>
+                        </div>
+                        
+                        <div class="preparation-list content">
+                            <ul>
+
+                                {% for preparation in data[index].preparation %}
+
+                                    <li>{{ preparation }}</li>
+
+                                {% endfor %}
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="details">
+
+                        <div class="hideShow">
+                            <p class="h6 bold">Informações adicionais</p>
+                            <a class="toggle">Esconder</a>
+                        </div>
+
+                        <div  class="content">
+                            <p>
+                                {{ data[index].information }}
+                            </p>
+                        </div>
                     </div>
                 </div>
-
-                {% endfor %}
-
-                {% for recipe in data %}   
             
-                <div class="col-4 card" id="{{ recipe.image }}">
-                    <img src="{{ recipe.image }}" class="card-img-top" alt="">
-                    <div class="card-body">
-                        <p class="text h6">{{ recipe.title }}</p>
-                        <p class="text small">por {{ recipe.author }}</p>
-                    </div>
-                </div>
-
-                {% endfor %}
-                
-                
-
-            </div>
-        
-    </main>
-      
-    {% endblock %}
-
-     <!--modal-->
-     <div class="modal-default">
-        <div class="modal-dialog modal-dialog-centered" role="document">
-          <div class="modal-content">
-            <div class="modal-body">
-                <img src="" class="card-img-top" alt="">
-                <p class="modal-title text h6"></p>
-                <p class="modal-detail text small"></p>
-            </div>
-            <div class="m-footer">
-              <p type="button" class="close">
-                Fechar
-              </p>
-            </div>
-          </div>
         </div>
-      </div>
 
-    <script src="script.js"></script> 
-    
-    
+    </main>
+
+    <script src="/script.js"></script>
+{% endblock %}

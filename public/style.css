@@ -115,5 +115,43 @@ footer p{
   opacity: 0.5;
 }
 
+/*recipe*/
 
+.layout-img img {
+  width: 930px;
+  height: 280px;
+  border-radius: 15px;
+  margin-top: 5%;
+} 
+
+.top-title {
+  text-align: center;
+  margin: 5% 0 0 0;
+}
+
+.top-author{
+  text-align: center;
+  opacity: 0.6;
+}
+
+.content.hide {
+  height: 0;
+  opacity: 0;
+  visibility: hidden;
+  line-height: 0;
+}
+
+
+.hideShow{
+  margin-top: 5%;
+  display: flex;
+}
+
+.toggle{
+  margin: 0.5% 0 0.5% 1%;
+  opacity: 0.6;
+  font-size: 0.5rem;
+  cursor: pointer; 
+ 
+}
 
