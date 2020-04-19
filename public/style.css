@@ -71,6 +71,7 @@ header, main {
 .text{
   margin: 0;
   margin-bottom: 10px;
+  font-size: 1em;
 }
 
 .card img{
@@ -113,5 +114,6 @@ footer p{
   text-shadow: 0 1px 0 #fff;
   opacity: 0.5;
 }
+
 
 
