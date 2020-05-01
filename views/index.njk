@@ -3,37 +3,40 @@
 {% block content %}
     <main>
         <div class="top-container">
-            <div class="row">
-                <div class="col-sm">
+            <div class="box-index">
+                <div class="box-tittle">
                     <h2 class="main-title">As melhores receitas</h2>
                     <p class="main-paragraph">
                         Aprenda a construir os melhores pratos com receitas criadas por profissionais do mundo inteiro.
                     </p>
                 </div>
 
-                <div class="col-sm center">
+                <div class="img-chef">
                     <img src="/assets/chef.png" alt="">
                 </div>
             </div>
         </div>
 
         <div class="middle-container">
-            <div class="h5 middle-title">
+            <div class="middle-title">
                 <p>Mais acessadas</p>
             </div>
             
-            <div class="row box-image-area">
+            <div class="card-box">
 
                 {% for recipe in data %}   
             
-                <div class="col-4 card" id="{{ recipe.image }}">
+                <div class="card" id="{{ recipe.image }}">
+                    
                     <img src="{{ recipe.image }}" class="card-img-top" alt="">
+                    
                     <div class="card-body">
-                        <p class="text h6">{{ recipe.title }}</p>
-                        <p class="text small">por {{ recipe.author }}</p>
+                        <p class="recipe-title">{{ recipe.title }}</p>
+                        <p class="recipe-author">por {{ recipe.author }}</p>
                     </div>
-                </div>
 
+                </div>
+            
                 {% endfor %}
 
             </div>

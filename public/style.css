@@ -1,81 +1,63 @@
 @import "https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;500;700&display=swap";
 
 :root{
-  --links: rgb(255, 169, 155);
-  --hoverLinks: rgb(250, 154, 139);
+  --links: rgb(250, 186, 176);
+  --hoverLinks: rgb(250, 139, 121);
 }
 
 * {
   margin: 0;
   padding: 0;
   border: 0;
-}
-
-header, main {
-  max-width: 80%;
-  width: 940px;
-  margin: 10px auto;
   font-family: "Roboto", sans-serif;
 }
 
-.nav-link{
-  color: black;
-  margin: 10px;
+/* LAYOUT */
+header,
+main {
+  max-width: 80%;
+  width: 940px;
+  margin: 10px auto;
+}
+
+nav .nav{
+  display: flex;
+  list-style: none;
+  box-sizing: border-box;
+}
+
+nav .nav a{
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
 }
 
 .nav-link:hover{
-  color: var(--links);
+  background-color: var(--hoverLinks);
 }
 
-.nav-pills .nav-link.active,
-.nav-pills .show > .nav-link {
-  color: #fff;
-  background-color:var(--links);
+.nav-link:active{
+  box-shadow: -0.5px -2px 5px rgba(12, 10, 10, 0.77);
 }
 
-.nav-link.active:hover{
-  background: var(--hoverLinks);
+.nav-link{
+  margin-right: 10px;
 }
 
-.top-container{
-  background-color: #FBDFDB;
-  border-radius: 30px;
-  padding: 20px 20px 0 20px;
-}
-.main-title, .main-paragraph {
-  margin: 10% 2px 10% 10%;
-}
-
-.main-title{
-  margin-top: 15%;
-}
-
-.center{
-  padding: 0;
-  margin-left: 15%;
-}
-
-.middle-title{
-  font-weight: bold;
-  margin-top: 30px;
-}
-
-.card{
-  border: none;
-}
-
-.card-body{
-  padding: 0;
-}
-
-.text{
-  margin: 0;
-  margin-bottom: 10px;
-  font-size: 1em;
-}
-
-.card img{
+.nav-link{
+  background-color: var(--links);
+  padding: 10px;
   border-radius: 10px;
+  margin-right: 10px;
+  box-shadow: 2px 4px 5px rgba(12, 10, 10, 0.77);
+}
+
+ul{
+  padding: 2vh 0;
+}
+
+li:first-child{
+  margin-right: 10%;
 }
 
 footer p{
@@ -85,35 +67,60 @@ footer p{
   padding: 10px;
 }
 
-.modal-default.visible {
-  background-color: rgba(0, 0 , 0 , 0.5);
+/* index */
+
+.box-index{
   width: 100%;
-  height: 100%;
-  position: fixed;
-  top: 0;
-  opacity: 1;
+  height: 350px;
+  background: #FBDFDB;
+  border-radius: 30px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  position: relative;
 }
 
-.modal-default{
-  background-color: rgba(0, 0 , 0 , 0.5);
-  width: 100%;
-  height: 100%;
-  position: fixed;
-  top: 0;
-  visibility: hidden;
-  opacity: 0;
+.box-tittle{
+  margin: 100px 60px;
+  padding: 0 30px;
+  width: 350px;
 }
 
-.close {
-  float: right;
-  margin-right: 45%;
-  font-size: 0.8rem;
-  font-weight: 700;
-  line-height: 1;
-  color: #000;
-  text-shadow: 0 1px 0 #fff;
-  opacity: 0.5;
+.box-tittle .main-title,
+.box-tittle .main-paragraph{
+  margin: 15px;
 }
+
+.img-chef{
+  position: absolute;
+  bottom:0;
+  right: 150px;
+}
+
+/* CARDS */
+
+.middle-title {
+  margin: 2%;
+  font-weight: bold;
+}
+
+.card-box{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.card{
+  padding: 2%;
+  width: 100%;
+  box-sizing: border-box;
+  
+}
+.card img{
+  border-radius: 10px;
+  width: 100%;
+  height: 150px;
+}
+
+
 
 /*recipe*/
 
@@ -121,13 +128,15 @@ footer p{
   width: 930px;
   height: 280px;
   border-radius: 15px;
-  margin-top: 5%;
+  margin-top: 2%;
 } 
 
 .top-title {
   text-align: center;
   margin: 5% 0 0 0;
-}
+} 
+
+/* HIDE/SHOW */
 
 .top-author{
   text-align: center;
@@ -143,7 +152,7 @@ footer p{
 
 
 .hideShow{
-  margin-top: 5%;
+  margin-top: 2%;
   display: flex;
 }
 
@@ -152,6 +161,4 @@ footer p{
   opacity: 0.6;
   font-size: 0.5rem;
   cursor: pointer; 
- 
-}
-
+} 
