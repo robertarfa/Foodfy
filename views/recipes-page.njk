@@ -2,28 +2,34 @@
 
 {% block content %}
     <main>
-            <div class="row box-image-area">
+            <div class="card-box">
                 
                 {% for recipe in recipes %}   
             
-                <div class="col-4 card" id="{{ recipe.image }}">
-                    <img src="{{ recipe.image }}" class="card-img-top" alt="{{ recipe.title }}">
+                 <div class="card" id="{{ recipe.image }}">
+                    
+                    <img src="{{ recipe.image }}" class="card-img-top" alt="">
+                    
                     <div class="card-body">
-                        <p class="text h6" id="{{ recipe.title }}">{{ recipe.title }}</p>
-                        <p class="text small" id="{{ recipe.author }}">por {{ recipe.author }}</p>
+                        <p class="recipe-title">{{ recipe.title }}</p>
+                        <p class="recipe-author">por {{ recipe.author }}</p>
                     </div>
+
                 </div>
 
                 {% endfor %}
 
                      {% for recipe in recipes %}   
             
-                <div class="col-4 card" id="{{ recipe.image }}">
-                    <img src="{{ recipe.image }}" class="card-img-top" alt="{{ recipe.title }}">
+              <div class="card" id="{{ recipe.image }}">
+                    
+                    <img src="{{ recipe.image }}" class="card-img-top" alt="">
+                    
                     <div class="card-body">
-                        <p class="text h6" id="{{ recipe.title }}">{{ recipe.title }}</p>
-                        <p class="text small" id="{{ recipe.author }}">por {{ recipe.author }}</p>
+                        <p class="recipe-title">{{ recipe.title }}</p>
+                        <p class="recipe-author">por {{ recipe.author }}</p>
                     </div>
+
                 </div>
 
                 {% endfor %}

@@ -11,22 +11,22 @@
                     <p class="top-title h5">
                         {{ data[index].title }}
                     </p>
-                    <p class="top-author small">
+                    <p class="top-author">
                         por {{ data[index].author }}
                     </p>
 
                     <div class="details">
                         <div class="hideShow">
-                            <p class="h6 bold">ingredientes</p>
+                            <p class="middle-title-recipe">Ingredientes</p>
                             <a class="toggle">Esconder</a>
                         </div>
                         
-                        <div class="ingredients-list content">
+                        <div class="content">
                             <ul>
 
                                 {% for ingredient in data[index].ingredients %}
 
-                                    <li>{{ ingredient }}</li>
+                                    <li class="list-content">{{ ingredient }}</li>
 
                                 {% endfor %}
                             
@@ -36,16 +36,16 @@
 
                     <div class="details">
                         <div class="hideShow">
-                            <p class="h6 bold">Modo de preparo</p>
+                            <p class="middle-title-recipe">Modo de preparo</p>
                             <a class="toggle">Esconder</a>
                         </div>
                         
-                        <div class="preparation-list content">
+                        <div class="content">
                             <ul>
 
                                 {% for preparation in data[index].preparation %}
 
-                                    <li>{{ preparation }}</li>
+                                    <li class="list-content">{{ preparation }}</li>
 
                                 {% endfor %}
                             </ul>
@@ -55,12 +55,12 @@
                     <div class="details">
 
                         <div class="hideShow">
-                            <p class="h6 bold">Informações adicionais</p>
+                            <p class="middle-title-recipe">Informações adicionais</p>
                             <a class="toggle">Esconder</a>
                         </div>
 
                         <div  class="content">
-                            <p>
+                            <p class="list-content information">
                                 {{ data[index].information }}
                             </p>
                         </div>
