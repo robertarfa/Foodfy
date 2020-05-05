@@ -11,14 +11,18 @@
   border: 0;
   font-family: "Roboto", sans-serif;
   font-size: 18px;
+ 
 }
-
+body{
+  position: relative;
+}
 /* LAYOUT */
-header,
+.header-default,
 main {
   max-width: 80%;
   width: 940px;
   margin: 10px auto;
+  
 }
 
 nav .nav{
@@ -66,6 +70,12 @@ footer p{
   text-align: center;
   padding: 10px;
   font-size: 0.5rem;
+}
+
+footer{
+  position: absolute;
+  top: 110%;
+  width: 100%;
 }
 
 /* index */
@@ -172,7 +182,9 @@ footer p{
   font-size: 0.8rem;
 }
 
-
+.information{
+  margin-top: 15px;
+}
 
 /* HIDE/SHOW */
 
@@ -194,6 +206,72 @@ footer p{
   opacity: 0.6;
   font-size: 0.5rem;
   cursor: pointer; 
+}
+
+/* ADMIN LAYOUT */
+
+.header-admin{
+  background-color: black;
+  padding: 5px;
+}
+
+.logo-admin{
+  margin-left: 10%;
+}
+
+/* FIELDS */
+
+.form{
+  margin-top: 40px;
+}
+
+.top-form{
+  display: flex;
+  justify-content: space-between;
+}
+
+button{
+  border-radius: 2px;
+  padding: 5px 10px;
+  background-color: rgb(114, 71, 212);
+  color:white;
+  font-size: 0.8rem;
+}
+
+input{
+  width: 100%;
+  padding: 10px;
+  border-radius: 10px;
+  border: solid 1px rgb(226, 226, 226);
+}
+
+.recipe-item{
+  margin-top: 20px;
+}
+
+.recipe-item div:first-child {
+  font-weight: bold;
+  font-size: 0.8rem;
+  margin-bottom: 10px;
+}
+
+.recipe-item a{
+  text-decoration: none;
+  font-size: 0.6rem;
+  font-weight: 900;
+}
+
+.recipe-item .add{
+  margin-top: 5px;
+}
+.recipe-item:last-child input{
+  padding: 100px 10px;
+}
+
+/* show */
+
+.show-recipe{
+  margin-top: 40px;
 }
 
 @media (max-width: 768px){
@@ -225,7 +303,24 @@ footer p{
   }
 }
 
-@media (max-width: 430px){
+@media (max-width: 678px){
+
+  .box-index{
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+  .box-tittle {
+    margin: 2% 10% 2% 10%;  
+    box-sizing: border-box;
+  }
+
+  .img-chef {
+    padding: 2% 30% 0;
+    margin-bottom: 0;
+  }
+}
+
+@media (max-width: 550px){
 
   .box-index{
     display: grid;
@@ -253,6 +348,12 @@ footer p{
   
 }
 
+@media (max-width: 678px){
+    .img-chef {
+    padding: 2% 18% 0;
+    margin-bottom: 0;
+  }
+}
 @media (max-width: 375px){
    .img-chef {
     padding: 5% 12% 0;
