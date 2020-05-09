@@ -1,0 +1,86 @@
+<div class="recipe-item">
+
+    <div>Imagem Receita</div>
+
+    <div>
+        <input 
+            type="url" 
+            name="recipe-image" 
+            class="text-fields" 
+            placeholder="http://" 
+            value="{{ recipe.image }}">
+    </div>
+
+</div>
+
+<div class="recipe-item">
+
+    <div>Nome da Receita</div>
+
+    <div>
+        <input type="text" name="recipe-title" class="text-fields" value="{{ recipe.title }}">
+    </div>
+
+</div>
+
+<div class="recipe-item">
+
+    <div>Autor</div>
+
+    <div>
+        <input type="text" name="recipe-author" class="text-fields" value="{{ recipe.author }}">
+    </div>
+
+</div>
+
+<div class="recipe-item">
+
+    <div>Ingredientes</div>
+    
+    <div>
+        {% if recipe %}
+            {% for ingredient in recipe.ingredients %}
+                    <input type="text" name="recipe-ingredients" class="text-fields" value="{{ ingredient }}">
+            {% endfor %}
+                {% else %}
+                    <input type="text" name="ingredients[]">
+            {% endif %}
+    </div>
+
+    <div class="add">
+        <button type="button" class="add-ingredient">Adicionar novo ingrediente</button>
+    </div>
+
+</div>
+
+<div class="recipe-item">
+
+    <div>Modo de preparo</div>
+
+    <div>
+        {% if recipe %}
+            {% for steps in recipe.preparation %}
+                <input type="text" name="recipe-preparation" class="text-fields" value="{{ steps }}">
+            {% endfor %}
+            {% else %}
+                <input type="text" name="preparation[]">
+        {% endif %}
+   </div>
+
+    <div class="add">
+        <button type="button" class="add-step">Adicionar novo passo</button>
+    </div>
+
+</div>
+
+<div class="recipe-item">
+
+    <div>Informações adicionais</div>
+
+    <div>
+        <input name="recipe-information" class="text-fields" value="{{recipe.information}}">
+    </div>
+
+</div>
+
+<script src="../script.js"></script> 

@@ -9,85 +9,33 @@
                         
                 <div>
                     <h1 class="top-title-create">
-                        Receita: {{ data[index].title }}
+                        Receita: {{ recipe.title }}
                     </h1>
                 </div>
 
                 <div class="grid-button">
-                    <button type="Submit">Editar Receita</button>
+                    <a href="/admin/recipes/{{ recipe.id }}/edit" class="button">Editar Receita</a>
                     {# <a href="/" id="cancelar" class="button">Cancelar</a> #}
                 </div>
 
             </div>
             
             <div class="layout-img">
-                <img src="{{data[index].image}}" alt=""/>
+                <img src="{{ recipe.image }}" alt=""/>
             </div>
 
             <div class="card-body">
                 
                 <p class="top-title h5">
-                    {{ data[index].title }}
+                    {{ recipe.title }}
                 </p>
                 <p class="top-author">
                     por
-                    {{ data[index].author }}
+                    {{ recipe.author }}
                 </p>
-
-                <div class="details">
-                    
-                    <div class="hideShow">
-                        <p class="middle-title-recipe">Ingredientes</p>
-
-                    </div>
-
-                    <div class="content">
-                        <ul>
-
-                            {% for ingredient in data[index].ingredients %}
-
-                                <li class="list-content">{{ ingredient }}</li>
-
-                            {% endfor %}
-
-                        </ul>
-
-                    </div>
-
-                    <div class="details">
-                        <div class="hideShow">
-                            <p class="middle-title-recipe">Modo de preparo</p>
-
-                        </div>
-
-                        <div class="content">
-                            <ul>
-
-                                {% for preparation in data[index].preparation %}
-
-                                    <li class="list-content">{{ preparation }}</li>
-
-                                {% endfor %}
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div class="details">
-
-                        <div class="hideShow">
-                            <p class="middle-title-recipe">Informações adicionais</p>
-
-                        </div>
-
-                        <div class="content">
-                            <p class="list-content information">
-                                {{ data[index].information }}
-                            </p>
-                        </div>
-                    </div>
-
-                </div>
             </div>
+
+            {% include "recipes-details.njk" %}
         </div>
 
     </main>

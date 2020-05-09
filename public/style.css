@@ -230,19 +230,24 @@ footer{
   justify-content: space-between;
 }
 
-button{
+button, .button{
   border-radius: 2px;
   padding: 5px 10px;
   background-color: rgb(114, 71, 212);
   color:white;
   font-size: 0.8rem;
+  text-decoration: none;
+}
+
+.add-ingredient, .add-step{
+  margin-top: 10px;
 }
 
 input{
   width: 100%;
   padding: 10px;
   border-radius: 10px;
-  border: solid 1px rgb(226, 226, 226);
+  border: solid 1px rgb(177, 176, 176);
 }
 
 .recipe-item{
@@ -255,15 +260,12 @@ input{
   margin-bottom: 10px;
 }
 
-.recipe-item a{
+.add a{
   text-decoration: none;
   font-size: 0.6rem;
   font-weight: 900;
 }
 
-.recipe-item .add{
-  margin-top: 5px;
-}
 .recipe-item:last-child input{
   padding: 100px 10px;
 }

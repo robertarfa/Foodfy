@@ -4,67 +4,18 @@
     <main>
         <div class="image-area">
             <div class="layout-img">
-                <img src="{{data[index].image}}" alt=""/>
+                <img src="{{ recipe.image }}" alt=""/>
             </div>
 
                 <div class="card-body">
                     <p class="top-title h5">
-                        {{ data[index].title }}
+                        {{ recipe.title }}
                     </p>
                     <p class="top-author">
-                        por {{ data[index].author }}
+                        por {{ recipe.author }}
                     </p>
 
-                    <div class="details">
-                        <div class="hideShow">
-                            <p class="middle-title-recipe">Ingredientes</p>
-                            <a class="toggle">Esconder</a>
-                        </div>
-                        
-                        <div class="content">
-                            <ul>
-
-                                {% for ingredient in data[index].ingredients %}
-
-                                    <li class="list-content">{{ ingredient }}</li>
-
-                                {% endfor %}
-                            
-                            </ul>
-
-                    </div>
-
-                    <div class="details">
-                        <div class="hideShow">
-                            <p class="middle-title-recipe">Modo de preparo</p>
-                            <a class="toggle">Esconder</a>
-                        </div>
-                        
-                        <div class="content">
-                            <ul>
-
-                                {% for preparation in data[index].preparation %}
-
-                                    <li class="list-content">{{ preparation }}</li>
-
-                                {% endfor %}
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div class="details">
-
-                        <div class="hideShow">
-                            <p class="middle-title-recipe">Informações adicionais</p>
-                            <a class="toggle">Esconder</a>
-                        </div>
-
-                        <div  class="content">
-                            <p class="list-content information">
-                                {{ data[index].information }}
-                            </p>
-                        </div>
-                    </div>
+                    {% include 'recipe-details.njk' %}
                 </div>
             
         </div>

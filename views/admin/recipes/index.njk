@@ -2,22 +2,13 @@
 
 {% block content %}
     <main>
+
+            <div class="title">
+                <h2>Gerenciar Receitas</h2>
+                <a href="/admin/recipes/create" class="button">Nova receita</a>
+            </div>
+
             <div class="card-box">
-                
-                {% for recipe in recipes %}   
-            
-                    <div class="card" id="{{ recipe.image }}">
-                        
-                        <img src="{{ recipe.image }}" class="card-img-top" alt="">
-                        
-                        <div class="card-body">
-                            <p class="recipe-title">{{ recipe.title }}</p>
-                            <p class="recipe-author">por {{ recipe.author }}</p>
-                        </div>
-
-                    </div>
-
-                {% endfor %}
 
                 {% for recipe in recipes %}   
             
@@ -33,7 +24,6 @@
                     </div>
 
                 {% endfor %}
-                
 
             </div>
         

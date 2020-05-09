@@ -2,102 +2,58 @@
 
 {% block content %}
 
- 
     <main>
-        
-         <form id="putForm" action="/admin/recipes/{{data[index]}}?_method=PUT" class="card-form" method="POST">
-            
+
+        <form id="putForm" action="/admin/recipes?_method=PUT" method="POST" class="form">
+
             <div class="form-box">
-            
+
                 <div class="form-details">
-                    
+
                     <div class="top-form">
-                        
+
                         <div>
-                        <h1 class="top-title-create">
-                            Editar receita
-                        </h1>
+                            <h1 class="top-title-create">
+                                Editando receita
+                            </h1>
                         </div>
 
                         <div class="grid-button">
+                            <button type="Submit" class="delete">Deletar</button>
                             <button type="Submit">Salvar Receita</button>
                             {# <a href="/" id="cancelar" class="button">Cancelar</a> #}
                         </div>
                     </div>
 
-                    <div class="recipe-item">
-                        
-                        <div>Imagem Receita</div>
-                        
-                        <div>
-                            <input 
-                                type="url"
-                                name="recipe-image"
-                                class="text-fields"
-                                placeholder="http://"
-                                value="">
-                        </div>
-
-                    </div>
-
-                    <div class="recipe-item">
-                        
-                        <div>Ingredientes</div>
-                        
-                        <div>
-                            <input 
-                                type="text"
-                                name="recipe-ingredients"
-                                class="text-fields"
-
-                                value="">
-                        </div>
-
-                        <div class="add">
-                            <a href="#">Adicionar novo ingrediente</a>
-                        </div>
-
-                    </div>
-
-                     <div class="recipe-item">
-                        
-                        <div>Modo de preparo</div>
-                        
-                        <div>
-                            <input 
-                                type="text"
-                                name="recipe-preparation"
-                                class="text-fields"
-                                value="">
-                        </div>
-
-                        <div class="add">
-                            <a href="#">Adicionar novo passo</a>
-                        </div>
-
-                    </div>
-
-                       <div class="recipe-item">
-                        
-                        <div>Informações adicionais</div>
-                        
-                        <div>
-                            <input
-                                name="recipe-information"
-                                class="text-fields"
-                                value="">
-                        </div>
-
-                    </div>
+                    {% include 'admin/recipes/fields.njk' %}
 
                 </div>
-
+                 <input type="hidden" name="id" value="{{ recipe.id }}">
             </div>
-        
 
         </form>
     </main>
 
-    <script src="/script.js"></script> 
+    <script>
+        let method = 'PUT'
+        document
+            .querySelector('.delete')
+            .addEventListener('click', function (event) {
+                method = 'DELETE'
+            })
+        document
+            .querySelector('form')
+            .addEventListener('submit', function (event) {
+                document
+                    .querySelector('form')
+                    .action = `/admin/recipes?_method=${method}`
+                if (method === 'DELETE') {
+                    const confirmation = confirm('Desejar realmente deletar?')
+                    if (!confirmation) {
+                        event.preventDefault()
+                        method = 'PUT'
+                    }
+                }
+            })
+    </script>
 {% endblock %}
-    

@@ -6,24 +6,9 @@
                 
                 {% for recipe in recipes %}   
             
-                    <div class="card" id="{{ recipe.image }}">
+                    <div class="card" id="{{ recipe.id }}">
                         
-                        <img src="{{ recipe.image }}" class="card-img-top" alt="">
-                        
-                        <div class="card-body">
-                            <p class="recipe-title">{{ recipe.title }}</p>
-                            <p class="recipe-author">por {{ recipe.author }}</p>
-                        </div>
-
-                    </div>
-
-                {% endfor %}
-
-                {% for recipe in recipes %}   
-            
-                    <div class="card" id="{{ recipe.image }}">
-                        
-                        <img src="{{ recipe.image }}" class="card-img-top" alt="">
+                        <img src="{{ recipe.image }}" class="card-img-top" alt="{{recipe.title}}">
                         
                         <div class="card-body">
                             <p class="recipe-title">{{ recipe.title }}</p>
@@ -33,8 +18,8 @@
                     </div>
 
                 {% endfor %}
-                
 
+              
             </div>
         
     </main>
