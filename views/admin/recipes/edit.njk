@@ -6,6 +6,7 @@
 
         <form id="putForm" action="/admin/recipes?_method=PUT" method="POST" class="form">
 
+        <input type="hidden" name="id" value="{{ recipe.id }}">
             <div class="form-box">
 
                 <div class="form-details">
@@ -18,19 +19,22 @@
                             </h1>
                         </div>
 
+
                         <div class="grid-button">
                             <button type="Submit" class="delete">Deletar</button>
                             <button type="Submit">Salvar Receita</button>
                             {# <a href="/" id="cancelar" class="button">Cancelar</a> #}
                         </div>
+
+                        
                     </div>
-
-                    {% include 'admin/recipes/fields.njk' %}
-
+                        
+                        {% include './fields.njk' %}
+                
                 </div>
-                 <input type="hidden" name="id" value="{{ recipe.id }}">
+                 
             </div>
-
+            
         </form>
     </main>
 

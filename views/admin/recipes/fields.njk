@@ -1,16 +1,14 @@
 <div class="recipe-item">
 
     <div>Imagem Receita</div>
-
     <div>
         <input 
             type="url" 
-            name="recipe-image" 
+            name="image" 
             class="text-fields" 
-            placeholder="http://" 
-            value="{{ recipe.image }}">
+            placeholder="https://" 
+            value="{{ recipes.image }}">
     </div>
-
 </div>
 
 <div class="recipe-item">
@@ -18,7 +16,7 @@
     <div>Nome da Receita</div>
 
     <div>
-        <input type="text" name="recipe-title" class="text-fields" value="{{ recipe.title }}">
+        <input type="text" name="title" class="text-fields" value="{{ recipes.title }}">
     </div>
 
 </div>
@@ -28,7 +26,7 @@
     <div>Autor</div>
 
     <div>
-        <input type="text" name="recipe-author" class="text-fields" value="{{ recipe.author }}">
+        <input type="text" name="author" class="text-fields" value="{{ recipes.author }}">
     </div>
 
 </div>
@@ -40,7 +38,7 @@
     <div>
         {% if recipe %}
             {% for ingredient in recipe.ingredients %}
-                    <input type="text" name="recipe-ingredients" class="text-fields" value="{{ ingredient }}">
+                    <input type="text" name="ingredients[]" class="text-fields" value="{{ ingredient }}">
             {% endfor %}
                 {% else %}
                     <input type="text" name="ingredients[]">
@@ -60,7 +58,7 @@
     <div>
         {% if recipe %}
             {% for steps in recipe.preparation %}
-                <input type="text" name="recipe-preparation" class="text-fields" value="{{ steps }}">
+                <input type="text" name="preparation[]" class="text-fields" value="{{ steps }}">
             {% endfor %}
             {% else %}
                 <input type="text" name="preparation[]">
@@ -78,7 +76,7 @@
     <div>Informações adicionais</div>
 
     <div>
-        <input name="recipe-information" class="text-fields" value="{{recipe.information}}">
+        <input name="information" class="text-fields" value="{{recipes.information}}">
     </div>
 
 </div>

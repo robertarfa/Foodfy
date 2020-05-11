@@ -1,50 +1,50 @@
 <div class="details">
-                        <div class="hideShow">
-                            <p class="middle-title-recipe">Ingredientes</p>
-                            <a class="toggle">Esconder</a>
-                        </div>
-                        
-                        <div class="content">
-                            <ul>
+    <div class="hideShow">
+        <p class="middle-title-recipe">Ingredientes</p>
+        <a class="toggle">Esconder</a>
+    </div>
 
-                                {% for ingredient in recipe.ingredients %}
+    <div class="content">
+        <ul>
 
-                                    <li class="list-content">{{ ingredient }}</li>
+            {% for ingredient in recipe.ingredients %}
 
-                                {% endfor %}
-                            
-                            </ul>
+                <li class="list-content">{{ ingredient }}</li>
 
-                    </div>
+            {% endfor %}
 
-                    <div class="details">
-                        <div class="hideShow">
-                            <p class="middle-title-recipe">Modo de preparo</p>
-                            <a class="toggle">Esconder</a>
-                        </div>
-                        
-                        <div class="content">
-                            <ul>
+        </ul>
 
-                                {% for preparation in recipe.preparation %}
+    </div>
 
-                                    <li class="list-content">{{ preparation }}</li>
+    <div class="details">
+        <div class="hideShow">
+            <p class="middle-title-recipe">Modo de preparo</p>
+            <a class="toggle">Esconder</a>
+        </div>
 
-                                {% endfor %}
-                            </ul>
-                        </div>
-                    </div>
+        <div class="content">
+            <ul>
 
-                    <div class="details">
+                {% for preparation in recipe.preparation %}
 
-                        <div class="hideShow">
-                            <p class="middle-title-recipe">Informações adicionais</p>
-                            <a class="toggle">Esconder</a>
-                        </div>
+                    <li class="list-content">{{ preparation }}</li>
 
-                        <div  class="content">
-                            <p class="list-content information">
-                                {{ recipe.information }}
-                            </p>
-                        </div>
-                    </div>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+
+    <div class="details">
+
+        <div class="hideShow">
+            <p class="middle-title-recipe">Informações adicionais</p>
+            <a class="toggle">Esconder</a>
+        </div>
+
+        <div class="content">
+            <p class="list-content information">
+                {{ recipe.information }}
+            </p>
+        </div>
+    </div>

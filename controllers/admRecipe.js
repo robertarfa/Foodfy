@@ -3,7 +3,7 @@ const fs = require('fs')
 
 
 exports.index = function (req, res) {
-    return res.render('admin/index', { recipes: data.recipes })
+    return res.render('admin/recipes/index', { recipes: data.recipes })
 }
 
 exports.create = function (req, res) {
@@ -89,6 +89,7 @@ exports.put = function (req, res) {
         ...foundRecipe,
         ...req.body,
         id: Number(req.body.id)
+        
     }
 
     data.recipes[index] = recipe
