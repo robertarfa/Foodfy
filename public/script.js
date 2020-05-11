@@ -1,6 +1,4 @@
 const cards = document.querySelectorAll('.card');
-const addIngredient = document.querySelector('button.add-ingredient')
-const addStep = document.querySelector('button.add-step')
 
 for (const card of cards) {
 
@@ -30,24 +28,31 @@ for (const detail of details) {
     console.log(a)
 }
 
-if (addIngredient)
-    addIngredient.addEventListener('click', () => {
-        const lastIngredient = document.querySelector('input[name="ingredients[]"]:last-child').cloneNode(true)
-        if (lastIngredient.value == '') {
-            alert('Preencha o último ingrediente!')
-            return
-        }
-        lastIngredient.value = ''
-        document.querySelector('.ingredients').appendChild(lastIngredient)
-    })
+//ADD INGREDIENTE / PREPARO
+function addIngrediente(){
+    const ingredientes = document.querySelector(".ingredients")
+    const fieldContainer = document.querySelectorAll(".ing")
 
-if (addStep)
-    addStep.addEventListener('click', () => {
-        const lastStep = document.querySelector('input[name="preparation[]"]:last-child').cloneNode(true)
-        if (lastStep.value == '') {
-            alert('Preencha o último passo!')
-            return
-        }
-        lastStep.value = ''
-        document.querySelector('.preparation').appendChild(lastStep)
-    })
+    const newField = fieldContainer[fieldContainer.length - 1].cloneNode(true);
+
+    if (newField.children[0].value == "") return false;
+
+    newField.children[0].value = "";
+    ingredientes.appendChild(newField);
+    }
+
+    document.querySelector(".add-ingredient").addEventListener("click", addIngrediente)
+
+function addPreparo(){
+    const ingredientes = document.querySelector(".passo-preparo")
+    const fieldContainer = document.querySelectorAll(".prep")
+
+    const newField = fieldContainer[fieldContainer.length - 1].cloneNode(true);
+
+    if (newField.children[0].value == "") return false;
+
+    newField.children[0].value = "";
+    ingredientes.appendChild(newField);
+    }
+
+    document.querySelector(".add-step").addEventListener("click", addPreparo)

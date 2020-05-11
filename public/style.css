@@ -166,6 +166,7 @@ footer{
 
 .card-body-admin{
   margin: 15% 0 0 5%;
+  position: relative;
 }
 
 
@@ -173,10 +174,17 @@ footer{
   margin-top: 5px;
 }
 
+.card-body-admin p:last-child{
+  position: absolute;
+  bottom: 10%;
+}
+
+
 .recipe-view{
   text-decoration: none;
   font-size: 0.8rem;
   font-weight: bold;
+  color: blue;
 }
 
 /*recipe*/
@@ -264,6 +272,7 @@ button, .button{
   color:white;
   font-size: 0.8rem;
   text-decoration: none;
+  cursor: pointer; 
 }
 
 .delete{
@@ -275,7 +284,7 @@ button, .button{
 }
 
 input{
-  width: 100%;
+  width: 97%;
   padding: 10px;
   border-radius: 10px;
   border: solid 1px rgb(177, 176, 176);
@@ -350,11 +359,20 @@ input{
 }
   
   .card-body-admin{
-    margin: 10% -15%;
+    margin: 4% -15%;
   }
 
   .card-body-admin p{
     font-size: 0.7rem;
+  }
+
+  .card-body-admin p:last-child{
+    position: absolute;
+    bottom: 0;
+  }
+
+  input{
+    width: 96%;
   }
 }
 
@@ -427,6 +445,14 @@ input{
   margin: 10% -10%;
 }
 
+.top-title-create{
+  margin-top: 1%;
+}
+
+input{
+  width: 94%;
+}
+
 }
 
 
@@ -446,8 +472,27 @@ input{
 
   .top-form .title h2, 
   .top-form .grid-button a{
+    width: 100%;
     font-size: 0.8rem;
+    display: grid;
+    grid-column: 60% 40%;
+    box-sizing: border-box;
 }
+
+.top-title-create{
+  margin-top: 5%;
+}
+
+.top-form .grid-button a{
+  text-align: center;
+  padding: 4px 5px;
+}
+
+
+input{
+  width: 92%;
+}
+
 
 }
 
