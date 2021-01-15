@@ -8,6 +8,7 @@
 ![](foodfy.gif) 
 
 <p>Admin</p>
+<p> Recipe manager with dynamic field to add new information and confirmation before deleting.</p>
 
 ![](foodfy_v2.gif) 
 
