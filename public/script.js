@@ -39,7 +39,7 @@ function addIngrediente(){
 
     newField.children[0].value = "";
     ingredientes.appendChild(newField);
-    }
+}
 
     document.querySelector(".add-ingredient").addEventListener("click", addIngrediente)
 
@@ -53,6 +53,7 @@ function addPreparo(){
 
     newField.children[0].value = "";
     ingredientes.appendChild(newField);
-    }
+
+}
 
     document.querySelector(".add-step").addEventListener("click", addPreparo)

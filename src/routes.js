@@ -1,7 +1,7 @@
 const express = require('express')
 const routes = express.Router()
 const data = require('./data.json')
-const recipes = require('./controllers/admRecipe')
+const recipes = require('./app/controllers/admRecipe')
 
 routes.get('/', function (req, res) {
     res.render('index', { recipes: data.recipes })

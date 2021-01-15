@@ -14,13 +14,13 @@ server.use(routes)
 //no render não precisa colocar .html/njk pq essa linha já faz isso
 server.set('view engine', 'njk')
 
-nunjucks.configure('views', {
+nunjucks.configure('src/app/views', {
     express: server,
     noCache: true,
     autoescape: false
 })
 
 //porta onde o servidor está rodando
-server.listen(5000, function(){
+server.listen(5000, function () {
     console.log('server is running')
 })
