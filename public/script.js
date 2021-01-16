@@ -25,11 +25,11 @@ for (const detail of details) {
         }
     })
 
-    console.log(a)
+    // console.log(a)
 }
 
 //ADD INGREDIENTE / PREPARO
-function addIngrediente(){
+function addIngrediente() {
     const ingredientes = document.querySelector(".ingredients")
     const fieldContainer = document.querySelectorAll(".ing")
 
@@ -41,9 +41,9 @@ function addIngrediente(){
     ingredientes.appendChild(newField);
 }
 
-    document.querySelector(".add-ingredient").addEventListener("click", addIngrediente)
+document.querySelector(".add-ingredient").addEventListener("click", addIngrediente)
 
-function addPreparo(){
+function addPreparo() {
     const ingredientes = document.querySelector(".passo-preparo")
     const fieldContainer = document.querySelectorAll(".prep")
 
@@ -56,4 +56,4 @@ function addPreparo(){
 
 }
 
-    document.querySelector(".add-step").addEventListener("click", addPreparo)
+document.querySelector(".add-step").addEventListener("click", addPreparo)
