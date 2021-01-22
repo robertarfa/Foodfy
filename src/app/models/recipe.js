@@ -168,21 +168,21 @@ module.exports = {
 
 
   },
-  delete(id, callback) {
+  async delete(id, callback) {
     console.log(id)
-    db.query(`
-    DELETE  recipes.*, ingredients.*, preparation.*
-    INNER JOIN ingredients 
-    ON recipes.id = ingredients.recipes_id
-    INNER JOIN preparation 
-    ON recipes.id = preparation.recipes_id
-    WHERE recipes.id = ${id}`, [id], function (err, results) {
 
-      if (err) throw `${err}`
+    let query = `DELETE FROM recipes WHERE id = $1`
 
-      return callback()
-    })
+    await db.query(query, [id])
 
+    query = `DELETE FROM ingredients WHERE recipes_id = $1`
 
+    await db.query(query, [id])
+
+    query = `DELETE FROM preparation WHERE recipes_id = $1`
+
+    await db.query(query, [id])
+
+    return callback()
   }
 }
