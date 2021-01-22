@@ -1,10 +1,14 @@
 // const data = require('../data.json')
 // const fs = require('fs')
-const db = require('../../config/db')
+
+const recipe = require('../models/recipe')
 
 module.exports = {
     index(req, res) {
-        // return res.render('admin/recipes/index', { recipes: data.recipes })
+
+        recipe.all(function (recipes) {
+            return res.render('admin/recipes/index', { recipes })
+        })
     },
     create(req, res) {
         return res.render('admin/recipes/create')
@@ -19,82 +23,54 @@ module.exports = {
 
         // const { image, title, author, ingredients, preparation, information } = req.body
 
-        const queryRecipes = `
-        INSERT INTO recipes(
-            image, 
-            title,
-            author,
-            information
-        ) VALUES ($1, $2, $3, $4)
+        recipe.create(req.body, function (recipe) {
 
-        RETURNING id
-        `
-
-        const valuesRecipes = [
-            req.body.image,
-            req.body.title,
-            req.body.author,
-            req.body.information
-        ]
-
-
-        db.query(queryRecipes, valuesRecipes, function (err, results) {
-            if (err) return res.send("Não foi possível cadastrar a nova receita")
-
-            var newRecipeId = results.rows[0].id
-            // return res.redirect(`//admin/recipes/:${results.rows[0].id}`)
-
-            const queryIngredients = `
-            INSERT INTO ingredients(
-                ingredients,
-                recipes_id
-            ) VALUES ($1, $2)
-    
-            RETURNING id
-            `
-            console.log(req.body)
-            const valuesIngredients = [
-                req.body.ingredients,
-                newRecipeId
-            ]
-
-            db.query(queryIngredients, valuesIngredients, function (err, results) {
-                if (err) return res.send("Não foi possível cadastrar os ingredientes")
-                // console.log(results)
-                // return res.redirect(`//admin/recipes/:${results.rows[0].id}`)
-            })
-
-            const queryPreparation = `
-            INSERT INTO preparation(
-                preparation,
-                recipes_id
-            ) VALUES ($1, $2)
-    
-            RETURNING id
-            `
-            console.log(req.body)
-            const valuesPreparation = [
-                req.body.preparation,
-                newRecipeId
-            ]
-
-            db.query(queryPreparation, valuesPreparation, function (err, results) {
-                if (err) return res.send("Não foi possível cadastrar a preparação")
-                // console.log(results)
-                // return res.redirect(`//admin/recipes/:${results.rows[0].id}`)
-            })
-
-            return res.redirect(`/admin/recipes/:${results.rows[0].id}`)
+            setTimeout(() => {
+                return res.redirect(`recipes/${recipe.id}`)
+                // return res.redirect('/admin/recipes')
+            }, 2000);
         })
 
 
 
     },
     show(req, res) {
-        return
+
+        recipe.find(req.params.id, function (recipe) {
+            if (!recipe) return res.send("Receita não encontrada")
+
+            let recipeIngredientsLength = recipe.ingredients.length
+            let recipeIngredients = recipe.ingredients.substring(2, recipeIngredientsLength - 2)
+
+            recipe.ingredients = recipeIngredients.split('","')
+
+            let recipePrepararionLength = recipe.preparation.length
+            let recipePreparation = recipe.preparation.substring(2, recipePrepararionLength - 2)
+
+            recipe.preparation = recipePreparation.split('","')
+
+            return res.render('admin/recipes/show', { recipe })
+        })
+
     },
     edit(req, res) {
-        return
+
+        recipe.find(req.params.id, function (recipe) {
+            if (!recipe) return res.send("Receita não encontrada")
+
+            let recipeIngredientsLength = recipe.ingredients.length
+            let recipeIngredients = recipe.ingredients.substring(2, recipeIngredientsLength - 2)
+
+            recipe.ingredients = recipeIngredients.split('","')
+
+            let recipePrepararionLength = recipe.preparation.length
+            let recipePreparation = recipe.preparation.substring(2, recipePrepararionLength - 2)
+
+            recipe.preparation = recipePreparation.split('","')
+
+            return res.render('admin/recipes/edit', { recipe })
+        })
+
     },
     put(req, res) {
         const keys = Object.keys(req.body)
@@ -104,12 +80,14 @@ module.exports = {
                 return res.send('Por favor, preencha todos os campos!')
         }
 
-        const { image, title, author, ingredients, preparation, information } = req.body
-
-        return
+        recipe.update(req.body, function () {
+            return res.redirect(`/admin/recipes/${req.body.id}`)
+        })
     },
     delete(req, res) {
-        return
+        recipe.delete(req.body.id, function () {
+            return res.redirect(`/admin/recipes`)
+        })
     },
 }
 

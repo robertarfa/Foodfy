@@ -1,31 +1,31 @@
 const express = require('express')
 const routes = express.Router()
-// const data = require('../data.json')
+const data = require('../data.json')
 const recipes = require('./app/controllers/admRecipe')
 
-// routes.get('/', function (req, res) {
-//     res.render('index', { recipes: data.recipes })
-// })
+routes.get('/', function (req, res) {
+    res.render('index', { recipes: data.recipes })
+})
 
 routes.get('/about', function (req, res) {
     res.render('about')
 })
 
-// routes.get('/recipes-page', function (req, res) {
-//     res.render('recipes-page', { recipes: data.recipes })
-// })
+routes.get('/recipes-page', function (req, res) {
+    res.render('recipes-page', { recipes: data.recipes })
+})
 
-// routes.get('/recipes/:id', function (req, res) {
-//     const { id } = req.params
+routes.get('/recipes/:id', function (req, res) {
+    const { id } = req.params
 
-//     const foundRecipe = data.recipes.find(function (recipe) {
-//         return recipe.id == id
-//     })
+    const foundRecipe = data.recipes.find(function (recipe) {
+        return recipe.id == id
+    })
 
-//     if (!foundRecipe) return res.send('Receita não encontrada!')
+    if (!foundRecipe) return res.send('Receita não encontrada!')
 
-//     res.render('recipes', { recipe: foundRecipe })
-// })
+    res.render('recipes', { recipe: foundRecipe })
+})
 
 routes.get("/admin", function (req, res) {
     res.redirect('/admin/recipes')

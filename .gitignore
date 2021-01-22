@@ -1,7 +1,1 @@
 node_modules/
-.vscode/
-package-lock.json
-package.json 
-favicon.ico
-foodfy.gif
-public/style.css
