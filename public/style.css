@@ -1,6 +1,6 @@
-@import "https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;500;700&display=swap";
+@import 'https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;500;700&display=swap';
 
-:root{
+:root {
   --links: rgb(250, 186, 176);
   --hoverLinks: rgb(250, 139, 121);
 }
@@ -9,11 +9,11 @@
   margin: 0;
   padding: 0;
   border: 0;
-  font-family: "Roboto", sans-serif;
+  font-family: 'Roboto', sans-serif;
   font-size: 18px;
 }
 
-body{
+body {
   position: relative;
 }
 
@@ -22,34 +22,34 @@ body{
 main {
   max-width: 80%;
   width: 940px;
-  margin: 10px auto; 
+  margin: 10px auto;
 }
 
-nav .nav{
+nav .nav {
   display: flex;
   list-style: none;
   box-sizing: border-box;
 }
 
-nav .nav a{
+nav .nav a {
   text-decoration: none;
   color: white;
   font-weight: bold;
 }
 
-.nav-link:hover{
+.nav-link:hover {
   background-color: var(--hoverLinks);
 }
 
-.nav-link:active{
+.nav-link:active {
   box-shadow: -0.5px -2px 5px rgba(12, 10, 10, 0.77);
 }
 
-.nav-link{
+.nav-link {
   margin-right: 10px;
 }
 
-.nav-link{
+.nav-link {
   background-color: var(--links);
   padding: 10px;
   border-radius: 10px;
@@ -57,24 +57,31 @@ nav .nav a{
   box-shadow: 2px 4px 5px rgba(12, 10, 10, 0.77);
 }
 
-ul{
+ul {
   padding: 2vh 0;
 }
 
-li:first-child{
+li:first-child {
   margin-right: 10%;
 }
 
-footer p{
+.find-form {
+  display: flex;
+  align-items: center;
+  margin-left: 16%;
+}
+
+footer p {
   background: rgb(206, 206, 206);
   text-align: center;
   padding: 10px;
   font-size: 0.5rem;
 }
 
-footer{
+footer {
   position: absolute;
-  top: 110%;
+  /* top: 110%; */
+  /* top: 95vh; */
   width: 100%;
 }
 
@@ -86,101 +93,97 @@ footer{
   font-weight: bold;
 }
 
-.box-index{
+.box-index {
   width: 100%;
   height: 100%;
-  background: #FBDFDB;
+  background: #fbdfdb;
   border-radius: 30px;
   display: grid;
   grid-template-columns: 50% 50%;
   box-sizing: content-box;
 }
 
-.box-tittle{
+.box-tittle {
   margin: 20% 8%;
   padding: 0 5%;
   width: 80%;
 }
 
 .box-tittle .main-title,
-.box-tittle .main-paragraph{
+.box-tittle .main-paragraph {
   margin: 5%;
 }
 
-.main-paragraph{
+.main-paragraph {
   text-align: justify;
 }
 
-.img-chef{
+.img-chef {
   padding: 8% 2% 0 20%;
-  margin-bottom: 0; 
-  
+  margin-bottom: 0;
 }
 
 /* ABOUT */
 
-.paragraph{
+.paragraph {
   padding-top: 2%;
   text-align: justify;
 }
 
 /* CARDS */
 
-.card-box{
+.card-box {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
 }
 
-.card{
+.card {
   padding: 2%;
   width: 100%;
   box-sizing: border-box;
-  
 }
-.card img{
+.card img {
   border-radius: 10px;
   width: 100%;
   height: 20vh;
 }
 
-.recipe-title{
+.recipe-title {
   font-weight: bold;
   font-size: 0.9rem;
 }
 
-.recipe-author{
+.recipe-author {
   font-size: 0.8rem;
 }
 
-.admin-item{
+.admin-item {
   display: grid;
   grid-template-columns: 30% 20% 30% 20%;
 }
 
-.card-admin img{
+.card-admin img {
   border-radius: 10px;
   width: 100%;
   height: 18vh;
-  margin-top: 5%
+  margin-top: 5%;
 }
 
-.card-body-admin{
+.card-body-admin {
   margin: 15% 0 0 5%;
   position: relative;
 }
 
-
-.card-body-admin p{
+.card-body-admin p {
   margin-top: 5px;
 }
 
-.card-body-admin p:last-child{
+.card-body-admin p:last-child {
   position: absolute;
   bottom: 10%;
 }
 
-
-.recipe-view{
+.recipe-view {
   text-decoration: none;
   font-size: 0.8rem;
   font-weight: bold;
@@ -200,23 +203,23 @@ footer{
   text-align: center;
   margin: 5% 0 0 0;
   font-weight: bold;
-} 
+}
 
-.top-author{
+.top-author {
   text-align: center;
   opacity: 0.6;
   margin-bottom: 20px;
 }
 
-.middle-title-recipe{
+.middle-title-recipe {
   font-size: 1rem;
 }
 
-.list-content{
+.list-content {
   font-size: 0.8rem;
 }
 
-.information{
+.information {
   margin-top: 15px;
 }
 
@@ -229,68 +232,70 @@ footer{
   line-height: 0;
 }
 
-.hideShow{
-  margin-top:0;
+.hideShow {
+  margin-top: 0;
   display: flex;
   align-items: center;
 }
 
-.toggle{
+.toggle {
   margin: 0.5% 0 0.5% 1%;
   opacity: 0.6;
   font-size: 0.5rem;
-  cursor: pointer; 
+  cursor: pointer;
 }
 
 /* ADMIN LAYOUT */
 
-.header-admin{
+.header-admin {
   background-color: black;
   padding: 5px;
 }
 
-.logo-admin{
+.logo-admin {
   margin-left: 10%;
 }
 
 /* FIELDS */
 
-.form{
+.form {
   margin-top: 40px;
 }
 
-.top-form{
+.top-form {
   display: flex;
   justify-content: space-between;
   margin: 20px 0;
 }
 
-button, .button{
+button,
+.button {
   border-radius: 2px;
   padding: 5px 10px;
   background-color: rgb(114, 71, 212);
-  color:white;
+  color: white;
   font-size: 0.8rem;
   text-decoration: none;
-  cursor: pointer; 
+  cursor: pointer;
 }
 
-.delete{
+.delete {
   background: red;
 }
 
-.add-ingredient, .add-step{
+.add-ingredient,
+.add-step {
   margin-top: 10px;
 }
 
-input{
+input {
   width: 97%;
   padding: 10px;
   border-radius: 10px;
   border: solid 1px rgb(177, 176, 176);
 }
 
-.recipe-item{
+.recipe-item {
   margin-top: 20px;
 }
 
@@ -300,28 +305,26 @@ input{
   margin-bottom: 10px;
 }
 
-.add a{
+.add a {
   text-decoration: none;
   font-size: 0.6rem;
   font-weight: 900;
 }
 
-.recipe-item:last-child input{
+.recipe-item:last-child input {
   padding: 100px 10px;
 }
 
 /* show */
 
-.show-recipe{
+.show-recipe {
   margin-top: 40px;
 }
 
-@media (max-width: 768px){
-  
-  .box-index{
+@media (max-width: 768px) {
+  .box-index {
     display: grid;
     grid-template-columns: 1fr 1fr;
-  
   }
 
   .box-tittle {
@@ -340,50 +343,49 @@ input{
     display: grid;
     grid-template-columns: 1fr 1fr;
   }
-  .card img{
+  .card img {
     height: 20vh;
   }
 
-  .admin-item{
+  .admin-item {
     display: grid;
     grid-template-columns: 30% 20% 30% 20%;
   }
 
-  .card-admin{
+  .card-admin {
     width: 80%;
   }
 
   .card-admin img {
     height: 15vh;
     margin-top: 5%;
-}
-  
-  .card-body-admin{
+  }
+
+  .card-body-admin {
     margin: 4% -15%;
   }
 
-  .card-body-admin p{
+  .card-body-admin p {
     font-size: 0.7rem;
   }
 
-  .card-body-admin p:last-child{
+  .card-body-admin p:last-child {
     position: absolute;
     bottom: 0;
   }
 
-  input{
+  input {
     width: 96%;
   }
 }
 
-@media (max-width: 678px){
-
-  .box-index{
+@media (max-width: 678px) {
+  .box-index {
     display: grid;
     grid-template-columns: 1fr;
   }
   .box-tittle {
-    margin: 2% 10% 2% 10%;  
+    margin: 2% 10% 2% 10%;
     box-sizing: border-box;
   }
 
@@ -394,124 +396,117 @@ input{
 
   .card-admin img {
     height: 10vh;
-}
-  
-  .card-body-admin{
+  }
+
+  .card-body-admin {
     margin: 5% -25%;
   }
 
   .card-body-admin p,
-  .card-body-admin a{
-    margin:0 10% 0 0;
+  .card-body-admin a {
+    margin: 0 10% 0 0;
     font-size: 0.5rem;
   }
 }
 
-@media (max-width: 550px){
-
-  .box-index{
+@media (max-width: 550px) {
+  .box-index {
     display: grid;
     grid-template-columns: 1fr;
   }
 
-  .middle-title p{
+  .middle-title p {
     font-size: 0.8rem;
   }
-  .card img{
+  .card img {
     height: 12vh;
-  } 
+  }
 
   .box-tittle {
     margin: 10% 10% 2% 10%;
   }
-  
-.recipe-title{
-   font-size: 0.8rem;
+
+  .recipe-title {
+    font-size: 0.8rem;
+  }
+
+  .recipe-author {
+    font-size: 0.7rem;
+  }
+
+  .top-form .title h2 {
+    margin-top: 2%;
+  }
+
+  .admin-item {
+    display: grid;
+    grid-template-columns: 60% 40%;
+  }
+  .card-body-admin {
+    margin: 10% -10%;
+  }
+
+  .top-title-create {
+    margin-top: 1%;
+  }
+
+  input {
+    width: 94%;
+  }
 }
 
-.recipe-author{
-   font-size: 0.7rem;
-}
-
-.top-form .title h2{
-  margin-top: 2%;
-}
-
-.admin-item{
-  display: grid;
-  grid-template-columns: 60% 40%;
-}
-.card-body-admin{
-  margin: 10% -10%;
-}
-
-.top-title-create{
-  margin-top: 1%;
-}
-
-input{
-  width: 94%;
-}
-
-}
-
-
-@media (max-width: 375px){
-   .img-chef {
+@media (max-width: 375px) {
+  .img-chef {
     padding: 5% 12% 0;
     margin-bottom: 0;
   }
 
-  .recipe-title{
+  .recipe-title {
     font-size: 0.7rem;
   }
 
-  .recipe-author{
+  .recipe-author {
     font-size: 0.6rem;
   }
 
-  .top-form .title h2, 
-  .top-form .grid-button a{
+  .top-form .title h2,
+  .top-form .grid-button a {
     width: 100%;
     font-size: 0.8rem;
     display: grid;
     grid-column: 60% 40%;
     box-sizing: border-box;
+  }
+
+  .top-form .grid-button a {
+    text-align: center;
+    padding: 4px 5px;
+  }
+
+  input {
+    width: 92%;
+  }
 }
 
-
-.top-form .grid-button a{
-  text-align: center;
-  padding: 4px 5px;
-}
-
-
-input{
-  width: 92%;
-}
-
-
-}
-
-@media (max-width: 320px){
+@media (max-width: 320px) {
   li:first-child {
     margin-right: 1%;
     margin-left: -1%;
-}
+  }
   .img-chef {
     padding: 5% 8% 0;
     margin-bottom: 0;
-}
+  }
 
-  .card img{
+  .card img {
     height: 10vh;
-}
+  }
 
-.recipe-title{
-font-size: 0.6rem;
-}
+  .recipe-title {
+    font-size: 0.6rem;
+  }
 
-.recipe-author{
-font-size: 0.5rem;
-}
+  .recipe-author {
+    font-size: 0.5rem;
+  }
 }

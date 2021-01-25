@@ -1,42 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <link rel="stylesheet" href="/style.css">
-    <title>Foodfy</title>
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="/style.css">
+        <title>Foodfy</title>
+    </head>
 
-<body>
-    <header class="header-default">
-        <div class="menu">
-            <nav class="nav">
-                <ul class="nav">
-                    <li class="nav-item">
-                      <a href="/"><img class="" src="/assets/logo.png" alt="Logo Foodfy" /></a>
-                    </li>
-                
-                    <li class="nav-item">
-                        <a class="nav-link" href="/about">Sobre</a>
-                    </li>
-                    
-                    <li class="nav-item">
-                        <a class="nav-link" href="/recipes-page">Receitas</a>
-                    </li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+    <body>
+        <header class="header-default">
+            <div class="menu">
+                <nav class="nav">
+                    <ul class="nav">
+                        <li class="nav-item">
+                            <a href="/"><img class="" src="/assets/logo.png" alt="Logo Foodfy"/></a>
+                        </li>
 
-    {% block content %}
-    
-    {% endblock %}
+                        <li class="nav-item">
+                            <a class="nav-link" href="/about">Sobre</a>
+                        </li>
 
-    <footer class="small">
-        <p>Todos os direitos reservados. Receitas Foodfy.</p>
-    </footer>
-    
-</body>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/recipes-page">Receitas</a>
+                        </li>
+
+                        <form class="find-form" action="/recipes/index" method="get">
+                            <li class="nav-item">
+                                <input type="text" name="filter" placeholder="Filtrar por nome de receita">
+                            </li>
+                            <li class="nav-item">
+                                <button type="submit">Buscar</button>
+                            </li>
+                        </form>
+                    </ul>
+
+                </nav>
+
+            </div>
+        </header>
+
+        {% block content %}{% endblock %}
+
+        <footer class="small">
+            <p>Todos os direitos reservados. Receitas Foodfy.</p>
+        </footer>
+
+    </body>
 
 </html>
