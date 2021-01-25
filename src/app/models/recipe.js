@@ -7,7 +7,8 @@ module.exports = {
     INNER JOIN ingredients 
     ON recipes.id = ingredients.recipes_id
     INNER JOIN preparation 
-    ON recipes.id = preparation.recipes_id`,
+    ON recipes.id = preparation.recipes_id
+    ORDER BY recipes.title ASC`,
 
       function (err, results) {
         if (err) throw `Não foi possível carregar os dados ${err}`
@@ -169,8 +170,6 @@ module.exports = {
 
   },
   async delete(id, callback) {
-    console.log(id)
-
     let query = `DELETE FROM recipes WHERE id = $1`
 
     await db.query(query, [id])
