@@ -2,50 +2,48 @@
 
 {% block content %}
 
- 
     <main>
-        
-            <div class="box-index">
-                <section class="box-tittle">
-                    <h2 class="main-title">As melhores receitas</h2>
-                    <p class="main-paragraph">
-                        Aprenda a construir os melhores pratos com receitas criadas por profissionais do mundo inteiro.
-                    </p>
-                </section>
 
-                <section class="img-chef">
-                    <img src="/assets/chef.png" alt="">
-                </section>
-            </div>
-        
+        <div class="box-index">
+            <section class="box-tittle">
+                <h2 class="main-title">As melhores receitas</h2>
+                <p class="main-paragraph">
+                    Aprenda a construir os melhores pratos com receitas criadas por profissionais do mundo inteiro.
+                </p>
+            </section>
+
+            <section class="img-chef">
+                <img src="/assets/chef.png" alt="">
+            </section>
+        </div>
 
         <div class="middle-container">
             <div class="middle-title">
                 <p>Mais acessadas</p>
             </div>
-            
+
             <div class="card-box">
 
-                {% for recipe in recipes %}   
-            
-                <div class="card" id="{{ recipe.id }}">
-                    
-                    <img src="{{ recipe.image }}" class="card-img-top" alt="">
-                    
-                    <div class="card-body">
-                        <p class="recipe-title">{{ recipe.title }}</p>
-                        <p class="recipe-author">por {{ recipe.author }}</p>
+                {% for recipe in recipes %}
+
+                    <div class="card" id="{{ recipe.id }}">
+
+                        <img src="{{ recipe.image }}" class="card-img-top" alt="">
+
+                        <div class="card-body">
+                            <p class="recipe-title">{{ recipe.title }}</p>
+                            <p class="recipe-author">por
+                                {{ recipe.author }}</p>
+                        </div>
+
                     </div>
 
-                </div>
-            
                 {% endfor %}
 
-                {% include "recipes-details.njk" %}
+                {# {% include "recipes-details.njk" %} #}
             </div>
         </div>
     </main>
 
-    <script src="/script.js"></script> 
+    <script src="/script.js"></script>
 {% endblock %}
-    

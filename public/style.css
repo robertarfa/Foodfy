@@ -29,6 +29,7 @@ nav .nav {
   display: flex;
   list-style: none;
   box-sizing: border-box;
+  align-items: center;
 }
 
 nav .nav a {
@@ -277,6 +278,7 @@ button,
   font-size: 0.8rem;
   text-decoration: none;
   cursor: pointer;
+  box-shadow: 2px 4px 5px rgba(12, 10, 10, 0.77);
 }
 
 .delete {
@@ -291,6 +293,14 @@ button,
 input {
   width: 97%;
   padding: 10px;
+  border-radius: 10px;
+  border: solid 1px rgb(177, 176, 176);
+}
+
+.filter {
+  width: 100%;
+  padding: 10px;
+  box-sizing: border-box;
   border-radius: 10px;
   border: solid 1px rgb(177, 176, 176);
 }
