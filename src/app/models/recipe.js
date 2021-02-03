@@ -183,5 +183,26 @@ module.exports = {
     await db.query(query, [id])
 
     return callback()
+  },
+  async paginate(params) {
+    const { limit, offset, callback } = params
+
+    let query = `SELECT 
+    (SELECT count(*) FROM recipes) AS total,
+    recipes.id, recipes.image, recipes.title, recipes.author, recipes.information, ingredients.ingredients, preparation.preparation  
+    FROM recipes
+        INNER JOIN ingredients 
+        ON recipes.id = ingredients.recipes_id
+        INNER JOIN preparation 
+        ON recipes.id = preparation.recipes_id
+        GROUP BY recipes.id, ingredients.ingredients, preparation.preparation LIMIT $1 OFFSET $2
+    `
+
+    await db.query(query, [limit, offset], function (err, results) {
+      if (err) throw { err }
+      callback(results.rows)
+    })
+
+
   }
 }

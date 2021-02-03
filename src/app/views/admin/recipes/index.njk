@@ -28,15 +28,17 @@
                         <p class="recipe-title">{{ recipe.title }}</p>
                         <p class="recipe-author">por
                             {{ recipe.author }}</p>
-                        <p><a class="recipe-view" href="recipes/{{ recipe.id }}">
-                            Visualizar
-                        </a></p>
+                        <p>
+                            <a class="recipe-view" href="recipes/{{ recipe.id }}">
+                                Visualizar
+                            </a>
+                        </p>
                     </div>
-
-                        
 
                 {% endfor %}
             </div>
+
+            <div class="pagination" data-page="{{ pagination.page }}" data-total="{{ pagination.total }}"></div>
 
         </div>
 

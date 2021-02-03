@@ -6,9 +6,33 @@ const recipe = require('../models/recipe')
 module.exports = {
     index(req, res) {
 
-        recipe.all(function (recipes) {
-            return res.render('admin/recipes/index', { recipes })
-        })
+        let { page, limit } = req.query
+
+        page = page || 1
+        limit = limit || 2
+        let offset = limit * (page - 1)
+
+        const params = {
+            // filter,
+            page,
+            limit,
+            offset,
+
+            callback(recipes) {
+                const pagination = {
+                    total: Math.ceil(recipes[0].total / limit),
+                    page
+                }
+
+                return res.render('admin/recipes/index', { recipes, pagination })
+            }
+        }
+
+        recipe.paginate(params)
+
+        // recipe.all(function (recipes) {
+        //     return res.render('admin/recipes/index', { recipes })
+        // })
     },
     create(req, res) {
         return res.render('admin/recipes/create')
